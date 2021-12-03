@@ -13,17 +13,17 @@
 */
 
 // constants won't change. They're used here to set pin numbers:
-const int offButtonPin = 2;     // the number of the pushbutton pin
+const int offButtonPin = 13;     // the number of the pushbutton pin
 const int onButtonPin = 4;
-const int ledPin =  13;      // the number of the LED pin
+
 
 // variables will change:
 int onButtonState = 0;         // variable for reading the pushbutton status
 int offButtonState = 0;
 
 void setup() {
+  Serial.begin(9600);
   // initialize the LED pin as an output:
-  pinMode(ledPin, OUTPUT);
   // initialize the pushbutton pin as an input with an internal pullup resistor:
   pinMode(offButtonPin, INPUT_PULLUP);
   pinMode(onButtonPin, INPUT_PULLUP);
@@ -38,12 +38,12 @@ void loop() {
   // check if the pushbutton is pressed. If it is, the buttonState is LOW:
   if (onButtonState == LOW) {
     // turn LED on:
-    digitalWrite(ledPin, HIGH);
+    Serial.println("test");
     delay(50);  // slight delay to help "debounce" the button
   }
   if (offButtonState == LOW) {
     // turn LED off:
-    digitalWrite(ledPin, LOW);
+    Serial.println("test");
     delay(50);  // slight delay to help "debounce" the button
   }
 }
