@@ -20,10 +20,7 @@ void setup() {
 void loop() {
 
   analogWrite(speed_pin,255);
-  delay(1000); // Run motor at full speed for a second
-  
-  analogWrite(speed_pin,0);
-  delay(1000); // Stop motor for a second
+
 
 
 }
